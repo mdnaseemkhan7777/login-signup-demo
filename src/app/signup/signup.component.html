@@ -1,0 +1,21 @@
+<p>signup works!</p>
+
+
+<div class="container form">
+    <div>
+        <h1>Signup form</h1>
+        <hr>
+    </div>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password"  id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">signup</button>
+      </form>
+      <a routerLink="/login" > already signup? Click to login</a>
+</div>

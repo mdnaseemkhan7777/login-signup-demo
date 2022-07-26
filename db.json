@@ -1,0 +1,36 @@
+{
+  "signup": [
+    {
+      "email": "hassan@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "email": "ali@gmail.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "email": "naseem@gmail.com",
+      "password": "123456",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
