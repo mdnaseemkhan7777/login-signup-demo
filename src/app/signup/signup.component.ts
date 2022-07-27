@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators   } from '@angular/forms';
 import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -16,11 +16,13 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      email: [""],
-      password: [""]
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(4)]] 
     })
   }
   signUp(){
+   if(this.signUpForm.valid){
+    console.log(this.signUpForm.value)
     this.http.post<any>("http://localhost:3000/signup", this.signUpForm.value).subscribe((res)=>{
       alert("success")
       this.signUpForm.reset();
@@ -28,6 +30,9 @@ export class SignupComponent implements OnInit {
     }, err=>{
       console.log("some went wrong")
     })
+   }else{
+    alert("please enter valid")
+   }
   }
 
 }

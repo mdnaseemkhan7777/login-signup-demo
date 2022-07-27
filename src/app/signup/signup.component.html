@@ -10,10 +10,12 @@
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small *ngIf="!signUpForm.get('email')?.valid && signUpForm.get('email')?.touched" class="form-text text-danger ">please enter a valid email</small>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" formControlName="password"  id="exampleInputPassword1">
+          <small *ngIf="!signUpForm.get('password')?.valid && signUpForm.get('password')?.touched" class="form-text text-danger ">please enter a valid password</small>
         </div>
         <button type="submit" class="btn btn-primary">signup</button>
       </form>
